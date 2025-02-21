@@ -33,7 +33,7 @@ picture img {
   width: 100vw;
 }
 main {
-  zoom: 88%;
+  zoom: 83%;
   background-color: var(--main-bg-color);
   width: 550px;
   height: fit-content;
