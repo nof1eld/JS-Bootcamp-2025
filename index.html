@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Bootcamp 2025 - Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="https://th.bing.com/th/id/R.2395ce87da3f91b4cdb179ec21ce7768?rik=9742j907NCeMAw&pid=ImgRaw&r=0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            position: relative;
+            color: white;
+        }
+
+        /* Subtle pattern overlay */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(165, 180, 252, 0.2);
+        }
+
+        .subtitle {
+            color: #a5b4fc;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        a {
+                text-decoration: none;
+        }
+        .buttons-container {
+            display: grid;
+            gap: 1rem;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .challenge-btn {
+            position: relative;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .challenge-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .challenge-btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .challenge-btn:hover::after {
+            opacity: 1;
+        }
+
+        .challenge-btn:active {
+            transform: translateY(0);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #22c55e;
+            margin-left: 8px;
+        }
+
+        .status-pending {
+            background-color: #f59e0b;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .challenge-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JS Bootcamp 2025</h1>
+            <p class="subtitle">My Solution Submissions</p>
+        </header>
+        
+        <div class="buttons-container">
+            <a href="challenge-1/index.html" class="challenge-btn linked">
+                Challenge 1: FAQ Accordion
+                <span class="status-dot"></span>
+            </a>
+            </button>
+            <button class="challenge-btn">
+                Challenge 2 ..
+                <span class="status-dot status-pending"></span>
+            </button>
+            <button class="challenge-btn">
+                Challenge 3 ..
+                <span class="status-dot status-pending"></span>
+            </button>
+            <button class="challenge-btn">
+                Challenge 4 ..
+                <span class="status-dot status-pending"></span>
+            </button>
+            <button class="challenge-btn">
+                Challenge 5 ..
+                <span class="status-dot status-pending"></span>
+            </button>
+        </div>
+
+        <footer>
+            Created by Ai • JS Bootcamp 2025
+        </footer>
+    </div>
+</body>
+</html>
